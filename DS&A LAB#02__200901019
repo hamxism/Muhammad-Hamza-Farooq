@@ -1,0 +1,24 @@
+class stack:
+    def is_balanced(value_str):
+        brackets = ['()', '{}', '[]','{a+b}','((a+b))','[a+b]*(x+2y)*{gg+kk}']
+        while any(x in value_str for x in brackets):
+            for a in brackets:
+                value_str = value_str.replace(a, '')
+        return not value_str
+
+
+    string = "({a+b})"
+    print(string, "-", "True"
+          if is_balanced(string) else "False")
+    string = "))((a+b}{"
+    print(string, "-", "True"
+          if is_balanced(string) else "False")
+    string = "((a+b))"
+    print(string, "-", "True"
+          if is_balanced(string) else "False")
+    string = "))"
+    print(string, "-", "True"
+          if is_balanced(string) else "False")
+    string=  "[a+b]*(x+2y)*{gg+kk}"
+    print(string, "-", "True"
+          if is_balanced(string) else "False")
